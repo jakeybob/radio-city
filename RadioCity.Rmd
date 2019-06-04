@@ -1,7 +1,7 @@
 ---
 title: "Radio City"
 author: "Bob Taylor"
-date: "31 May 2019"
+date: '`r format(Sys.Date(), "%d/%m/%Y")`'
 output: html_document
 ---
 
@@ -42,5 +42,15 @@ Notable inequalities in the Garnock Valley and Kilbirnie areas include:
 * Drug related hospital stays
 * Drug related hospital stays, ages 11-25 years
 * Employment rate for 16-24 year olds
+
+
+5 Selected indicators to look at are:
+
+* Young people living in the most income deprived quintile            
+* Population within 500 metres of a derelict site 
+* Drug-related hospital stays, aged 11-25 years   
+* Alcohol related hospital stays, ages 11-25 years
+* Employment rate for 16-24 year olds
+
 
 # Policies
