@@ -19,8 +19,10 @@ View(area_names)
 # "HSC partnership": "North Ayrshire"
 # "HSC locality": "Garnock Valley"
 
+# reduce dataset to relevant Garnock/Kilbirnie/Ayshire, and Scotland for comparisons
 df_comparisons <- df %>%
   filter(area_name %in% c("Scotland", "North Ayrshire", "Ayrshire & Arran", "Kilbirnie North", "Kilbirnie South & Longbar",
                           "Garnock Valley")) %>%
   select(-area_code)
+
 write_rds(df_comparisons, "data/data.rds", "bz")

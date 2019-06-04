@@ -9,22 +9,38 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-Change.
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Inequalities
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)) which allows you to compare different health and social indicators across areas and time.
 
-```{r cars}
-summary(cars)
-```
+Notable inequalities in the Garnock Valley and Kilbirnie areas include:
 
-## Including Plots
+* Young people living in the most income deprived quintile            
+* Population within 500 metres of a derelict site                     
+* Child protection with parental alcohol misuse                       
+* All-cause mortality among the 15-44 year olds                       
+* Drug-related hospital stays, aged 11-25 years                       
+* Road traffic accident casualties                                    
+* Children referred to the Children's Reporter for care and protection
+* Child protection with parental drug or alcohol misuse               
+* Child protection with parental drug misuse                          
+* People living in 15% most 'access deprived' areas                   
+* Young people living in the most access deprived quintile            
+* Young people living in the most crime deprived quintile             
+* Mid-year population estimate - all ages                             
+* Quit attempts                                                       
+* Exposure to secondhand smoke at 6-8 weeks                           
+* Premature births                                                    
+* Early deaths from coronary heart disease (<75)                      
+* Drug-related hospital stays                        
 
-You can also embed plots, for example:
+---
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+* Alcohol related hospital stays, ages 11-25 years
+* Alcohol related mortality, ages 11-25 years
+* Children in low income families
+* Drug related hospital stays
+* Drug related hospital stays, ages 11-25 years
+* Employment rate for 16-24 year olds
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Policies
