@@ -46,4 +46,7 @@ p <- df %>%
   
 p
 ggsave(filename = "pics/plot.pdf", device="pdf", width = 297, height = 210, units = "mm")
+write_rds(p, "pics/all_five_scot.rds")
+write_rds(ggplotly(p), "pics/all_five_scot_plotly.rds")
+
 # ggplotly(p)

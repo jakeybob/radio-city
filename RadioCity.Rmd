@@ -6,13 +6,19 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.width=10, fig.align = "center")
+library(tidyverse)
+library(plotly)
+fig_all_five <- read_rds("pics/all_five_scot.rds")
+fig_all_five_plotly <- ggplotly(fig_all_five)
+
 ```
 
-# Inequalities
+# Overview
 
 The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)) which allows you to compare different health and social indicators across areas and time.
 
+## Inequalities
 Notable inequalities in the Garnock Valley and Kilbirnie areas include:
 
 * Young people living in the most income deprived quintile            
@@ -53,4 +59,19 @@ Notable inequalities in the Garnock Valley and Kilbirnie areas include:
 * Employment rate for 16-24 year olds
 
 
-# Policies
+## Geographies
+Health board, intermediate zone, HSC partnership, HSC locality, Council area, National
+
+```{r echo=FALSE}
+fig_all_five
+```
+
+# Income Deprivation
+
+# Derelict Sites
+
+# Drug Related Hospital Stays
+
+# Alcohol Related Hospital Stays
+
+# Employment Rate
