@@ -10,3 +10,4 @@ scratch/
 *.html
 pics/
 *.png
+.DS_Store
