@@ -10,7 +10,7 @@ indicators <- c("Young people living in the most income deprived quintile",
                 "Alcohol-related hospital stays, aged 11-25 years",
                 "Employment rate for 16-24 year olds")
 
-dat <- read_rds("data/data.rds")
+dat <- read_rds("data/data_national_comparison.rds")
 df_scot <- dat %>% filter(area_name == "Scotland")
 df_rc <- dat %>% filter(area_name != "Scotland") 
 

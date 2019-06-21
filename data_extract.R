@@ -25,4 +25,17 @@ df_comparisons <- df %>%
                           "Garnock Valley")) %>%
   select(-area_code)
 
-write_rds(df_comparisons, "data/data.rds", "bz")
+write_rds(df_comparisons, "data/data_national_comparison.rds", "bz")
+
+
+# reduce dataset to indicators of interest, but include all available area data
+indicators <- c("Young people living in the most income deprived quintile",
+                "Population within 500 metres of a derelict site",
+                "Drug-related hospital stays, aged 11-25 years",
+                "Alcohol-related hospital stays, aged 11-25 years",
+                "Employment rate for 16-24 year olds")
+
+df_indicators <- df %>%
+  filter(indicator %in% indicators)
+
+write_rds(df_indicators, "data/data_indicators.rds", "bz")

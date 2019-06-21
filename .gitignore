@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-scotpho_data_extract.csv
 packrat/lib*/
 packrat/src/
 docs/
