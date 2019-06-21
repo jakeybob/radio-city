@@ -1,40 +1,45 @@
 library(tidyverse)
 library(leaflet)
-library(sf)
-library(sp)
-library(rgdal)
-library(rmapshaper)
+# library(sf)
+# library(sp)
+# library(rgdal)
+# library(rmapshaper)
 
-indicators <- c("Young people living in the most income deprived quintile",
-                "Population within 500 metres of a derelict site",
-                "Drug-related hospital stays, aged 11-25 years",
-                "Alcohol-related hospital stays, aged 11-25 years",
-                "Employment rate for 16-24 year olds")
+kilbirnie <- c(55.755622, -4.684996)
+glengarnock <- c(55.739150, -4.676749)
 
-# regenerate from original scotpho extract all the IZ data etc
+markers <- tibble(lat = c(kilbirnie[1], glengarnock[1]),
+                  long = c(kilbirnie[2], glengarnock[2]),
+                  name = c("Kilbirnie", "Glengarnock"))
 
-dat <- read_rds("data/data.rds") %>% 
-  filter(indicator %in% indicators,
-         area_type == "Intermediate zone")
+dat <- read_rds("data/data_indicators.rds") 
+
+# latest year info for one specific indicator at IZ level
+df_income_deprived <- dat %>% 
+  filter(indicator == "Young people living in the most income deprived quintile",
+         area_type == "Intermediate zone",
+         # year == max(year), 
+         year == 2016) %>%
+  mutate_if(sapply(., is.character), as.factor)
 
 
 # intermediate zone choropleth
 # https://spatialdata.gov.scot/geonetwork/srv/eng/catalog.search;jsessionid=7BFD03DFFDA5CD66CC065C75FBAD2172#/metadata/389787c0-697d-4824-9ca9-9ce8cb79d6f5
-x <- sf::st_read("data/SG_IntermediateZoneBdry_2011") %>%
-  # sf::st_simplify(preserveTopology = TRUE, dTolerance = 100) %>%
-  ms_simplify(.) %>%
-  ms_filter_islands(.) %>%
-  sf::st_transform(crs="+proj=longlat +datum=WGS84") 
+mapdata_income_deprived <- st_read("data/SG_IntermediateZoneBdry_2011") %>%
+  ms_simplify(., drop_null_geometries = TRUE) %>%
+  ms_filter_islands(., min_area = 1e8) %>%
+  st_transform(crs="+proj=longlat +datum=WGS84") %>% 
+  left_join(select(df_income_deprived, area_code, measure), by=c("InterZone" = "area_code"))
 
-# bins <- c(0, 10, 20, 50, 100, 200, 500, 1000, Inf)
-# pal <- colorBin("YlOrRd", domain = x$StdAreaKm2, bins = bins)
-pal2 <- colorNumeric("YlOrRd", domain = x$StdAreaKm2)
+pal2 <- colorNumeric("Blues", domain = mapdata_income_deprived$measure)
 
-b <- x %>% 
-  # dplyr::slice(1:nrow(.)) %>%
-  leaflet(options = leafletOptions(preferCanvas = F)) %>%
+p <- mapdata_income_deprived %>% 
+  leaflet(options = leafletOptions(preferCanvas = TRUE)) %>%
   setView(-3, 57, 5.5) %>%
-  # addTiles() %>%
-  addPolygons(weight = 0, fillOpacity = 0.8, smoothFactor = 1,
-              fillColor = ~pal2(StdAreaKm2))
-b
+  addPolygons(weight = 0.2, fillOpacity = 0.6, smoothFactor = 1,
+              fillColor = ~pal2(measure)) %>%
+  addTiles() %>%
+  # addMarkers(markers$long, markers$lat, popup = markers$name, label = markers$name) %>%
+  addLabelOnlyMarkers(markers$long, markers$lat, label = markers$name)
+
+p
