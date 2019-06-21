@@ -34,18 +34,26 @@ mapdata_income_deprived <- st_read("data/SG_IntermediateZoneBdry_2011") %>%
 # IZs2 <- df_income_deprived %>% filter(area_code %in% IZs$InterZone)
 
 pal <- colorNumeric("Blues", domain = mapdata_income_deprived$measure)
+zoom <- 5.6
+zoom <- 7
+
+# width=940, height=1400
+addAwesomeMarkers()
 
 p <- mapdata_income_deprived %>% 
-  leaflet(title="thing") %>%
+  leaflet() %>%
   # addTiles() %>%
-  addMiniMap("bottomleft", minimized = TRUE, toggleDisplay = TRUE) %>%
+  # addMiniMap("bottomleft", minimized = TRUE, toggleDisplay = TRUE) %>%
   # addMarkers(data = markers, ~long, ~lat, popup = ~name, label =~name, 
   #            labelOptions = list(textsize = "20px", 
   #                                noHide = TRUE))
-  addLegend("topright", pal = pal, values = ~measure, opacity = .95, 
+  addLegend("bottomright", pal = pal, values = ~measure, opacity = .95, 
             title = "", 
             labFormat = labelFormat(suffix = "%")) %>%
-  setView(-3.8, 57.2, 5.6) %>%
+  # setView(-3.8, 57.2, zoom) %>%
+  fitBounds(-7, 56, -1, 60.9) %>%
+  addRectangles(-7, 56, -1, 60.9) %>%
+  # fitBounds(lng1 = -7.319333, lat1 = 55.002201 , lng2 = -0.799263, lat2 = 60.000001) %>%
   addPolygons(weight = 0.2, fillOpacity = .95, smoothFactor = 1,
               fillColor = ~pal(measure),
               highlight = highlightOptions(weight = 1, fillOpacity = 1, bringToFront = TRUE),
@@ -56,5 +64,6 @@ p <- mapdata_income_deprived %>%
                 direction = "auto")
               )
 p
+mapshot(p, file ="pics/test3.png", vwidth = 940, vheight = 1500)
 
-
+# fitBounds(lng1 = -7.319333, lat1 = 55.002201 , lng2 = -0.799263, lat2 = 60.823668) %>%
