@@ -2,15 +2,22 @@
 title: "Radio City"
 author: "Bob Taylor"
 date: '`r format(Sys.Date(), "%d/%m/%Y")`'
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width=10, fig.align = "center")
+knitr::opts_chunk$set(echo = TRUE, fig.width = 12, fig.align = "center")
 library(tidyverse)
 library(plotly)
 fig_all_five <- read_rds("pics/all_five_scot.rds")
 fig_all_five_plotly <- ggplotly(fig_all_five)
+map_income_deprived <- read_rds("pics/map_income_deprived_zoom.rds")
+map_alcohol_hospital <- read_rds("pics/map_alcohol_hospital_zoom.rds")
+map_drug_hospital <- read_rds("pics/map_drug_hospital_zoom.rds")
 
 ```
 
@@ -66,12 +73,49 @@ Health board, intermediate zone, HSC partnership, HSC locality, Council area, Na
 fig_all_five
 ```
 
+
 # Income Deprivation
+
+Application written in the R programming language [@RCoreTeam] using the Shiny framework [@Chang2015].
+
+```{r echo = FALSE}
+map_income_deprived
+```
+
 
 # Derelict Sites
 
 # Drug Related Hospital Stays
 
+```{r echo = FALSE, fig.width=4}
+map_drug_hospital
+```
+
 # Alcohol Related Hospital Stays
 
+```{r echo = FALSE, fig.width=4}
+map_alcohol_hospital
+```
+
 # Employment Rate
+
+# References
+
+# Static Images
+
+## Income Deprivation
+
+![optional caption text](pics/map_income_deprived_scot.png)
+![optional caption text](pics/map_income_deprived_zoom.png)
+
+## Alcohol Related Hospital Stays
+
+![optional caption text](pics/map_alcohol_hospital_scot.png)
+
+![optional caption text](pics/map_alcohol_hospital_zoom.png)
+
+## Drug Related Hospital Stays
+
+![optional caption text](pics/map_drug_hospital_scot.png)
+
+![optional caption text](pics/map_drug_hospital_zoom.png)
