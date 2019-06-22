@@ -13,12 +13,16 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = TRUE, fig.width = 12, fig.align = "center")
 library(tidyverse)
 library(plotly)
-fig_all_five <- read_rds("pics/all_five_scot.rds")
-fig_all_five_plotly <- ggplotly(fig_all_five)
+trend_alcohol_hospital <- read_rds("pics/trend_alcohol_hospital.rds")
+trend_drug_hospital <- read_rds("pics/trend_drug_hospital.rds")
+trend_employment <- read_rds("pics/trend_employment.rds")
+trend_derelict <- read_rds("pics/trend_derelict.rds")
+trend_income_deprived <- read_rds("pics/trend_income_deprived.rds")
 map_income_deprived <- read_rds("pics/map_income_deprived_zoom.rds")
 map_alcohol_hospital <- read_rds("pics/map_alcohol_hospital_zoom.rds")
 map_drug_hospital <- read_rds("pics/map_drug_hospital_zoom.rds")
-
+map_employment <- read_rds("pics/map_employment_zoom.rds")
+map_derelict <- read_rds("pics/map_derelict_zoom.rds")
 ```
 
 # Overview
@@ -69,14 +73,16 @@ Notable inequalities in the Garnock Valley and Kilbirnie areas include:
 ## Geographies
 Health board, intermediate zone, HSC partnership, HSC locality, Council area, National
 
-```{r echo=FALSE}
-fig_all_five
-```
+![optional caption text](pics/all_trends.png)
 
 
 # Income Deprivation
 
 Application written in the R programming language [@RCoreTeam] using the Shiny framework [@Chang2015].
+
+```{r echo = FALSE}
+trend_income_deprived
+```
 
 ```{r echo = FALSE}
 map_income_deprived
@@ -85,30 +91,58 @@ map_income_deprived
 
 # Derelict Sites
 
+```{r echo = FALSE}
+trend_derelict
+```
+
+```{r echo = FALSE}
+map_derelict
+```
+
 # Drug Related Hospital Stays
 
-```{r echo = FALSE, fig.width=4}
+```{r echo = FALSE}
+trend_drug_hospital
+```
+
+```{r echo = FALSE}
 map_drug_hospital
 ```
 
 # Alcohol Related Hospital Stays
 
-```{r echo = FALSE, fig.width=4}
+```{r echo = FALSE}
+trend_alcohol_hospital
+```
+
+```{r echo = FALSE}
 map_alcohol_hospital
 ```
 
 # Employment Rate
 
-# References
+```{r echo = FALSE}
+trend_employment
+```
 
-# Static Images
+```{r echo = FALSE}
+map_employment
+```
+
+
+# Additional Assets
 
 ## Income Deprivation
+
+![optional caption text](pics/trend_income_deprived.png)
 
 ![optional caption text](pics/map_income_deprived_scot.png)
 ![optional caption text](pics/map_income_deprived_zoom.png)
 
 ## Alcohol Related Hospital Stays
+
+![optional caption text](pics/trend_alcohol_hospital.png)
+
 
 ![optional caption text](pics/map_alcohol_hospital_scot.png)
 
@@ -116,6 +150,28 @@ map_alcohol_hospital
 
 ## Drug Related Hospital Stays
 
+![optional caption text](pics/trend_drug_hospital.png)
+
 ![optional caption text](pics/map_drug_hospital_scot.png)
 
 ![optional caption text](pics/map_drug_hospital_zoom.png)
+
+## Employment Rate
+
+![optional caption text](pics/trend_employment.png)
+
+![optional caption text](pics/map_employment_scot.png)
+
+![optional caption text](pics/map_employment_zoom.png)
+
+## Derelict Sites
+
+![optional caption text](pics/trend_derelict.png)
+
+![optional caption text](pics/map_derelict_scot.png)
+
+![optional caption text](pics/map_derelict_zoom.png)
+
+
+# References
+
