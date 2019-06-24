@@ -4,6 +4,7 @@ author: "Bob Taylor"
 date: '`r format(Sys.Date(), "%d/%m/%Y")`'
 output:
   html_document:
+    self_contained: true
     toc: true
     toc_depth: 2
 bibliography: references.bib
@@ -27,76 +28,43 @@ map_derelict <- read_rds("pics/map_derelict_zoom.rds")
 
 # Overview
 
-The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)) which allows you to compare different health and social indicators across areas and time.
-
-## Inequalities
-Notable inequalities in the Garnock Valley and Kilbirnie areas include:
-
-* Young people living in the most income deprived quintile            
-* Population within 500 metres of a derelict site                     
-* Child protection with parental alcohol misuse                       
-* All-cause mortality among the 15-44 year olds                       
-* Drug-related hospital stays, aged 11-25 years                       
-* Road traffic accident casualties                                    
-* Children referred to the Children's Reporter for care and protection
-* Child protection with parental drug or alcohol misuse               
-* Child protection with parental drug misuse                          
-* People living in 15% most 'access deprived' areas                   
-* Young people living in the most access deprived quintile            
-* Young people living in the most crime deprived quintile             
-* Mid-year population estimate - all ages                             
-* Quit attempts                                                       
-* Exposure to secondhand smoke at 6-8 weeks                           
-* Premature births                                                    
-* Early deaths from coronary heart disease (<75)                      
-* Drug-related hospital stays                        
-
----
-
-* Alcohol related hospital stays, ages 11-25 years
-* Alcohol related mortality, ages 11-25 years
-* Children in low income families
-* Drug related hospital stays
-* Drug related hospital stays, ages 11-25 years
-* Employment rate for 16-24 year olds
-
-
-5 selected indicators to look at are:
-
-* Young people living in the most income deprived quintile            
-* Population within 500 metres of a derelict site 
-* Drug-related hospital stays, aged 11-25 years   
-* Alcohol related hospital stays, ages 11-25 years
-* Employment rate for 16-24 year olds
-
-
-## Geographies
-Health board, intermediate zone, HSC partnership, HSC locality, Council area, National
-
-![optional caption text](pics/all_trends.png)
-
-
-# Income Deprivation
+The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)), which faciliates the comparison of different health and social indicators across different geogrphical areas and time.
 
 Application written in the R programming language [@RCoreTeam] using the Shiny framework [@Chang2015].
+Test reference [@WinNT].
+Another test reference [ScotPHO]
+
+## Inequalities
+
+By dowloading a data archive from this tool, values from Garnock Valley and Kilbirnie areas were compared to Scotland level data (see `top_indicators.R` code). The following indicators were chosen for further investigation:
+
+<!-- * Young people living in the most income deprived quintile             -->
+<!-- * Population within 500 metres of a derelict site                      -->
+<!-- * Child protection with parental alcohol misuse                        -->
+<!-- * All-cause mortality among the 15-44 year olds                        -->
+<!-- * Drug-related hospital stays, aged 11-25 years                        -->
+<!-- * Road traffic accident casualties                                     -->
+<!-- * Children referred to the Children's Reporter for care and protection -->
+<!-- * Child protection with parental drug or alcohol misuse                -->
+<!-- * Child protection with parental drug misuse                           -->
+<!-- * People living in 15% most 'access deprived' areas -->
+
+* *Alcohol related hospital stays*, ages 11-25 years
+* *Drug-related hospital stays*, aged 11-25 years   
+* *Employment rate* for 16-24 year olds
+* Population within 500 metres of a *derelict site* 
+* Young people living in the most *income deprived* quintile         
+
+![Time Trend for All Indicators](pics/all_trends.png)
+
+# Alcohol Related Hospital Stays
 
 ```{r echo = FALSE}
-trend_income_deprived
+trend_alcohol_hospital
 ```
 
 ```{r echo = FALSE}
-map_income_deprived
-```
-
-
-# Derelict Sites
-
-```{r echo = FALSE}
-trend_derelict
-```
-
-```{r echo = FALSE}
-map_derelict
+map_alcohol_hospital
 ```
 
 # Drug Related Hospital Stays
@@ -107,16 +75,6 @@ trend_drug_hospital
 
 ```{r echo = FALSE}
 map_drug_hospital
-```
-
-# Alcohol Related Hospital Stays
-
-```{r echo = FALSE}
-trend_alcohol_hospital
-```
-
-```{r echo = FALSE}
-map_alcohol_hospital
 ```
 
 # Employment Rate
@@ -130,14 +88,38 @@ map_employment
 ```
 
 
+# Derelict Sites
+
+```{r echo = FALSE}
+trend_derelict
+```
+
+```{r echo = FALSE}
+map_derelict
+```
+
+
+
+# Income Deprivation
+
+
+
+
+```{r echo = FALSE}
+trend_income_deprived
+```
+
+```{r echo = FALSE}
+map_income_deprived
+```
+
+
+
+
+
+
+
 # Additional Assets
-
-## Income Deprivation
-
-![optional caption text](pics/trend_income_deprived.png)
-
-![optional caption text](pics/map_income_deprived_scot.png)
-![optional caption text](pics/map_income_deprived_zoom.png)
 
 ## Alcohol Related Hospital Stays
 
@@ -171,6 +153,12 @@ map_employment
 ![optional caption text](pics/map_derelict_scot.png)
 
 ![optional caption text](pics/map_derelict_zoom.png)
+
+## Income Deprivation
+
+![optional caption text](pics/trend_income_deprived.png)
+![optional caption text](pics/map_income_deprived_scot.png)
+![optional caption text](pics/map_income_deprived_zoom.png)
 
 
 # References

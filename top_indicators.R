@@ -2,7 +2,7 @@ library(tidyverse)
 
 #### Top 20 lists
 # most extreme indicators (i.e. 20 "best" or "worst" indicators & areas for all time periods)
-df <- read_rds("data/data.rds") %>%
+df <- read_rds("data/data_national_comparison.rds") %>%
   group_by(indicator, area_name, area_type)
 
 df_scot <- df %>% filter(area_name == "Scotland")
@@ -18,7 +18,7 @@ top_20_by_ind_area_all <- df_rc %>% left_join(df_scot, by=c("indicator", "year",
   head(20)
 
 # as above but for most recent data only
-df <- read_rds("data/data.rds") %>%
+df <- read_rds("data/data_national_comparison.rds") %>%
   group_by(indicator, area_name, area_type) %>%
   filter(if_else(as.numeric(year) == max(as.numeric(year)), TRUE, FALSE) == TRUE) # most recent
 
