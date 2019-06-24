@@ -6,5 +6,5 @@
 * `data_extract.R` code to extract and tidy the initial scotPHO data extract
 * `top_indicators.R` code to summarise the extract to indicator level for the relevant geographies
 * `data_explore.R` initial look at plots
-* `map_test.R initial map tests
+* `map_test.R` initial map tests
 * `data` folder with scotPHO extract, map data files, and R data files created from schotPHO extract

@@ -28,15 +28,9 @@ map_derelict <- read_rds("pics/map_derelict_zoom.rds")
 
 # Overview
 
-The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)), which faciliates the comparison of different health and social indicators across different geogrphical areas and time.
+The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)[@ScotPHO]), which faciliates the comparison of different health and social indicators across different geogrphical areas and time.
 
-Application written in the R programming language [@RCoreTeam] using the Shiny framework [@Chang2015].
-Test reference [@WinNT].
-Another test reference [ScotPHO]
-
-## Inequalities
-
-By dowloading a data archive from this tool, values from Garnock Valley and Kilbirnie areas were compared to Scotland level data (see `top_indicators.R` code). The following indicators were chosen for further investigation:
+By dowloading a data archive from this tool, values from Garnock Valley and Kilbirnie areas were compared to Scotland level data (see `top_indicators.R` code). The following indicators were selected for further investigation:
 
 <!-- * Young people living in the most income deprived quintile             -->
 <!-- * Population within 500 metres of a derelict site                      -->
@@ -55,7 +49,13 @@ By dowloading a data archive from this tool, values from Garnock Valley and Kilb
 * Population within 500 metres of a *derelict site* 
 * Young people living in the most *income deprived* quintile         
 
+The time trend for these indicators (compared to the Scottish national value for comparison purposes) can be seen below.
+
+
 ![Time Trend for All Indicators](pics/all_trends.png)
+
+
+<br><br>
 
 # Alcohol Related Hospital Stays
 
