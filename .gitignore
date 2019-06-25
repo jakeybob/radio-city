@@ -4,9 +4,5 @@
 .Ruserdata
 packrat/lib*/
 packrat/src/
-docs/
 scratch/
-*.html
-pics/
-*.png
 .DS_Store
