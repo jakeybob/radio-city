@@ -30,7 +30,7 @@ map_derelict <- read_rds("pics/map_derelict_zoom.rds")
 
 The information here is sourced from the Scottish Public Health Observatory ([ScotPHO](https://www.scotpho.org.uk/)). Their online profiling [tool](https://scotland.shinyapps.io/ScotPHO_profiles_tool/) facilitates the comparison of numerous health and social indicators across different geographical areas and time.
 
-After downloading a data archive via this tool, values from Garnock Valley and Kilbirnie areas were compared to Scotland level data (see `top_indicators.R` code). *All plots, maps, code and documents are available in the github [repository](https://github.com/jakeybob/radio-city)*.
+After downloading a data archive via this tool, values from the Garnock Valley and Kilbirnie areas were compared to Scotland level data (see `top_indicators.R` code). *All plots, maps, code and documents are available in the github [repository](https://github.com/jakeybob/radio-city)*.
 
 The following indicators were selected for further investigation:
 
@@ -58,12 +58,12 @@ The time trend for these indicators (compared to the Scottish national value for
 <center>**Time Trend for All Indicators**</center>
 <br><br>
 
-Interactive time trends and maps are presented for these indicators in the following sections.
+Interactive time trends and maps are presented for these indicators in the following sections. The code used to generate these can be found in `plots_generate.R` and `maps_generate.R`.
 <br><br><br>
 
 # Alcohol Related Hospital Stays
 
-The national trend is a decrease for alcohol related hospital stays for this age group (11–25 years). While North Ayrshire and NHS Ayrshire & Arran have closed the gap somewhat, they remain consistently and significantly above the national average.
+The national trend is a decrease for alcohol related hospital stays for this age group (11&ndash;25 years). While North Ayrshire and NHS Ayrshire & Arran have closed their inequality gaps, they remain consistently and significantly above the national average.
 
 <br>
 ```{r echo = FALSE}
@@ -71,7 +71,7 @@ trend_alcohol_hospital
 ```
 
 <br><br>
-<center>Map of Alcohol Related Hospital Stays (11–25 years)</center>
+<center>Map of Alcohol Related Hospital Stays (11&ndash;25 years)</center>
 ```{r echo = FALSE}
 map_alcohol_hospital
 ```
@@ -79,7 +79,7 @@ map_alcohol_hospital
 
 # Drug Related Hospital Stays
 
-North Ayrshire and NHS Ayrshire & Arran follow the national trend for drug related stays for this age group (11–25 years), and they remain consistently and significantly above the national average
+North Ayrshire and NHS Ayrshire & Arran follow the national trend for drug related stays for this age group (11&ndash;25 years), and they remain consistently and significantly above the national average
 
 <br>
 ```{r echo = FALSE}
@@ -87,7 +87,7 @@ trend_drug_hospital
 ```
 
 <br><br>
-<center>Map of Alcohol Related Hospital Stays (11–25 years)</center>
+<center>Map of Alcohol Related Hospital Stays (11&ndash;25 years)</center>
 ```{r echo = FALSE}
 map_drug_hospital
 ```
@@ -95,7 +95,7 @@ map_drug_hospital
 
 # Employment Rate
 
-The employment rate for young people (16–24 years) in North Ayrshire and NHS Ayrshire & Arran has been  *significantly* lower than the national average in the recent past, achieving above average performance in just one year out of the fourteen shown.
+The employment rate for young people (16&ndash;24 years) in North Ayrshire and NHS Ayrshire & Arran has been significantly lower than the national average in the recent past, achieving above average performance in just one year out of the fourteen shown.
 
 <br>
 ```{r echo = FALSE}
@@ -103,7 +103,7 @@ trend_employment
 ```
 
 <br><br>
-<center>Map of Employment Rate for 16–24 year olds</center>
+<center>Map of Employment Rate for 16&ndash;24 year olds</center>
 ```{r echo = FALSE}
 map_employment
 ```
@@ -111,7 +111,7 @@ map_employment
 
 # Derelict Sites
 
-All of the geographies presented show a significantly higher proportion of the population live within 500m of a derelict site. Notably the Kilbirnie North, and Kilbirnie South & Longbar zones, exhibit some 2.5&#215; the national average.
+All of the geographies presented show a significantly higher proportion of the population living within 500m of a derelict site, when compared to the national mean. Notably the Kilbirnie North, and Kilbirnie South & Longbar zones, exhibit some 2.5&#215; the national average.
 
 <br>
 ```{r echo = FALSE}
@@ -151,28 +151,28 @@ These documents delineate health policies and strategies related to the area of 
   + North Ayshire Health and Social Care Strategic Plan 2018 &ndash; 2021 SUMMARY
   + North Ayshire Health and Social Care Strategic Plan 2018 &ndash; 2021 DRAFT FOR CONSULTATION
   
-  <br>This [document](https://www.north-ayrshire.gov.uk/Documents/CorporateServices/ChiefExecutive/PolicyandPerformance/directorate-plan/2018/Strategic-Plan.pdf) outlines the health and social care inequalities in the region and strategies for dealing with them in the immediate future, including working with Third Sector Interface to support social enterprise. Appendix 6 shows selected statistics for the Garnock Valley area.
+  <br>This [document](https://www.north-ayrshire.gov.uk/Documents/CorporateServices/ChiefExecutive/PolicyandPerformance/directorate-plan/2018/Strategic-Plan.pdf) outlines the health and social care inequalities in the region and strategies for dealing with them in the immediate future, including working with the Third Sector Interface to support social enterprise. Appendix 6 shows selected statistics for the Garnock Valley area.
   
 * North Ayshire Health and Social Care Partnership Strategies, Plans and Reports
   + A number of documents outlining the partnership's strategies/plans etc are found [online](http://www.nahscp.org/partnership-strategies-plans-reports/). Included in the `docs` folder are:
   + Annual Performance Report 2017 &ndash; 18
   <br>Includes partnership performance against national outcomes on health, wellbeing, children and justice.
   + Shared Equality Outcomes 2017 &ndash; 21
-  <br>Action plan on improving equality outcomes in the area, e.g. supporting formerly cared for young people to access employment, education or training and increasing number of social enterprises.
+  <br>Action plan on improving equality outcomes in the area, e.g. supporting formerly cared for young people to access employment, education or training; and increasing number of social enterprises.<br><br>
   
-* North Ayrshire Community Planning Partnership Response to Health & Sport Committee
-  Comments on questions raised relating to early years health inequalities and employment.
+* North Ayrshire Community Planning Partnership Response to Health & Sport Committee.
+  <br>Comments on questions raised relating to early years health inequalities and employment.
   
-* NHS Ayrshire & Arran 2020 Vision
-  Overview of the future health and wellbeing framework for the area, including short, medium and longer term aims.
+* NHS Ayrshire & Arran 2020 Vision.
+  <br>Overview of the future health and wellbeing framework for the area, including short, medium and longer term aims.
   
-* ScotPHO North Ayrshire Health and Wellbeing Profiles &ndash; key indicators and overview
-  This [document](https://www.scotpho.org.uk/media/1045/scotpho-hwb-profiles-aug2016-northayrshire.pdf) includes notable charts and statistics relating to health and wellbeing in the area.
+* ScotPHO North Ayrshire Health and Wellbeing Profiles &ndash; key indicators and overview.
+  <br>This [document](https://www.scotpho.org.uk/media/1045/scotpho-hwb-profiles-aug2016-northayrshire.pdf) includes notable charts and statistics relating to health and wellbeing in the area.
 <br><br><br>
 
 # Additional Assets
 
-This section contains static screenshots of the interactive maps and plots in the previous sections.
+This section contains static screenshots of the interactive maps and plots from the previous sections.
 <br><br>
 
 ## Alcohol Related Hospital Stays
